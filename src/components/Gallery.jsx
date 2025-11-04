@@ -42,7 +42,7 @@ const Gallery = () => {
             </div>
 
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-0-4 justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-0 place-items-center">
                 {galleryImages.map((img, index) => {
                     // Apply staggered vertical offset: even = up, odd = down
                     const translateYClass = index % 2 === 0 ? 'translate-y-[-6px]' : 'translate-y-[6px]';
@@ -55,7 +55,7 @@ const Gallery = () => {
                             <img
                                 src={img.src}
                                 alt={img.alt}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover border-1 gap-0"
                             />
                         </div>
                     );
