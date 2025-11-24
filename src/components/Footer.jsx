@@ -4,22 +4,37 @@ import { ArrowRight } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="bg-[#0A2A66] text-white px-12 py-16">
+        <footer className="bg-[#0A2A66] text-white px-6 sm:px-12 py-16">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
 
                 {/* Left Content */}
                 <div className="flex flex-col justify-center">
-                    <h2 className="text-3xl font-bold leading-snug">
+                    <h2 className="text-2xl sm:text-2xl lg:text-3xl leading-snug">
                         Take the First Step Toward <br /> Brighter Futures
                     </h2>
-                    <p className="text-base mt-4 text-gray-200">
+                    <p className="text-sm sm:text-sm lg:text-base mt-4 text-gray-200">
                         Our specialists help children with autism thrive through care and support.
                     </p>
 
-                    <button className="mt-6 flex items-center gap-2 bg-[#2D6CDF] hover:bg-[#1e4ea8] text-white px-6 py-3 w-60 rounded-full font-semibold transition">
+                    {/* Compact Responsive Button */}
+                    <button className="
+                        mt-4 
+                        flex items-center gap-2 
+                        bg-[#2D6CDF] hover:bg-[#1e4ea8] 
+                        text-white 
+                        px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-2 
+                        rounded-full font-normal 
+                        text-xs sm:text-sm md:text-sm lg:text-sm
+                        w-max
+                        transition
+                    ">
                         GET SUPPORT NOW
-                        <span className="bg-yellow-400 text-[#0A2A66] p-2 rounded-full">
-                            <ArrowRight size={16} />
+                        <span className="
+                            bg-yellow-400 text-[#0A2A66] 
+                            p-1.5 sm:p-2 rounded-full 
+                            flex items-center justify-center
+                        ">
+                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                         </span>
                     </button>
                 </div>
@@ -29,7 +44,7 @@ const Footer = () => {
                     <img
                         src="./choose-us-banner.png"
                         alt="Child with parent"
-                        className="rounded-md shadow-lg object-cover w-100"
+                        className="rounded-md shadow-lg object-cover w-full sm:w-auto"
                     />
                 </div>
             </div>
@@ -39,7 +54,7 @@ const Footer = () => {
 
                 {/* Logo + About */}
                 <div>
-                    <h3 className="flex items-center gap-2 text-xl font-bold text-yellow-400">
+                    <h3 className="flex items-center gap-2 text-xl text-yellow-400">
                         <span className="text-2xl">⊗</span> AUTIXUM
                     </h3>
                     <p className="mt-4 text-gray-300 text-sm leading-relaxed">
@@ -62,7 +77,7 @@ const Footer = () => {
 
                 {/* Pages */}
                 <div>
-                    <h4 className="font-semibold text-lg mb-4">Pages</h4>
+                    <h4 className="text-lg mb-4">Pages</h4>
                     <ul className="space-y-2 text-gray-300 text-sm">
                         <li className="hover:text-yellow-400 cursor-pointer">Home</li>
                         <li className="hover:text-yellow-400 cursor-pointer">About Us</li>
@@ -74,7 +89,7 @@ const Footer = () => {
 
                 {/* Contact Info */}
                 <div>
-                    <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
+                    <h4 className="text-lg mb-4">Contact Info</h4>
                     <p className="text-sm text-gray-300">
                         785 Harmony Lane, Suite <br /> 103 Uptown, NY 10027
                     </p>
@@ -84,7 +99,7 @@ const Footer = () => {
 
                 {/* Newsletter */}
                 <div>
-                    <h4 className="font-semibold text-lg mb-4">Newsletter</h4>
+                    <h4 className="text-lg mb-4">Newsletter</h4>
                     <p className="text-sm text-gray-300">
                         Stay informed with tips, upcoming events, and parenting guidance
                         from child care experts and therapists.

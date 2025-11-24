@@ -93,22 +93,42 @@ const Specialist = () => {
                     >
                         Autism specialists offer personalized care to support children's development.
                     </motion.p>
+
+                    {/* Responsive Button */}
                     <motion.button
                         custom={4}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: false, amount: 0.3 }}
                         variants={leftVariants}
-                        className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-3"
+                        className="
+                            group 
+                            bg-blue-600 hover:bg-blue-700 
+                            text-white 
+                            px-6 py-3 
+                            sm:px-7 sm:py-3 
+                            md:px-8 md:py-4 
+                            rounded-full 
+                            font-semibold 
+                            text-sm sm:text-base md:text-lg
+                            flex items-center gap-3
+                        "
                     >
                         VIEW ALL
-                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight
+                            className="
+                                w-4 h-4 
+                                sm:w-5 sm:h-5 
+                                md:w-6 md:h-6 
+                                transition-transform group-hover:translate-x-1
+                            "
+                        />
                     </motion.button>
                 </div>
 
-                {/* Right Content - Carousel */}
+                {/* Right Content - Responsive Carousel */}
                 <div className="relative">
-                    <div className="flex gap-6 justify-center">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap gap-6 justify-center">
                         {getVisibleSpecialists().map((specialist, index) => (
                             <motion.div
                                 key={specialist.id}
@@ -117,10 +137,9 @@ const Specialist = () => {
                                 whileInView="visible"
                                 viewport={{ once: false, amount: 0.3 }}
                                 variants={rightVariants}
-                                className="flex flex-col"
+                                className="flex flex-col w-full sm:w-[48%] md:w-72"
                             >
-                                {/* Card Image with Plus Icon */}
-                                <div className="w-72 h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 relative flex-shrink-0">
+                                <div className="w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 relative flex-shrink-0">
                                     <img
                                         src={specialist.image}
                                         alt={specialist.name}
@@ -135,7 +154,6 @@ const Specialist = () => {
                                     </div>
                                 </div>
 
-                                {/* Doctor Info below card */}
                                 <div className="mt-4 text-center">
                                     <h3 className="text-xl font-bold text-gray-900">{specialist.name}</h3>
                                     <p className="text-gray-600">{specialist.position}</p>
@@ -145,10 +163,17 @@ const Specialist = () => {
                     </div>
 
                     {/* Navigation Arrows */}
-                    <button onClick={prevSlide} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-white hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300 group z-10">
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-white hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300 group z-10"
+                    >
                         <ChevronLeft className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors duration-300" />
                     </button>
-                    <button onClick={nextSlide} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-white hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300 group z-10">
+
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-white hover:bg-blue-600 rounded-full shadow-lg flex items-center justify-center transition-colors duration-300 group z-10"
+                    >
                         <ChevronRight className="w-6 h-6 text-gray-600 group-hover:text-white transition-colors duration-300" />
                     </button>
                 </div>

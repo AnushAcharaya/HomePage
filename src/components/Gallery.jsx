@@ -55,7 +55,7 @@ const Gallery = () => {
                             <img
                                 src={img.src}
                                 alt={img.alt}
-                                className="w-full h-full object-cover border-1 gap-0"
+                                className="w-full h-full object-cover border-0 gap-0"
                             />
                         </div>
                     );
